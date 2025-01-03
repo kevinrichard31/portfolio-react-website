@@ -1,0 +1,52 @@
+.navbar {
+    border-bottom: 1px solid grey;
+}
+
+@keyframes rotateIcon {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate {
+    animation: rotateIcon 1s ease-out;
+  }
+  
+  .cherry-bomb-one-regular {
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .kadwa-500 {
+    font-family: "Kadwa", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .menu-top {
+    padding-inline: 10px;
+  }
+
+  .header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transform: translateY(0);
+    transition: 0.3s ease-in-out;
+}
+
+.header-wrapper.hidden-navbar {
+    transform: translateY(-100%);
+}
+
+.header-wrapper.visible-navbar {
+    transform: translateY(0);
+}
+
+

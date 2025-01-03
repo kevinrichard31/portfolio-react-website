@@ -1,0 +1,35 @@
+.navbar {
+    border-bottom: 1px solid grey;
+}
+
+@keyframes rotateIcon {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate {
+    animation: rotateIcon 1s ease-out;
+  }
+  
+
+  .projets-container {
+    display: grid;
+    margin: 0 auto;
+    column-gap: 50px;
+    justify-content: center;
+    row-gap: 50px;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    max-width: 1000px;
+    padding-bottom: 150px;
+  }
+
+
+  @media (min-width: 870px) {
+    .projets-container { grid-template-columns: repeat(2, 1fr); }
+  }
+  
