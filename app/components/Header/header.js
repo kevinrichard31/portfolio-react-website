@@ -2,6 +2,7 @@
 import './style.css';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
+import Switchtheme from "../Switchtheme/switchtheme"
 
 function Header({ projectsRef }) {
     const [rotatingIcon, setRotatingIcon] = useState(null);
@@ -51,6 +52,9 @@ function Header({ projectsRef }) {
                 </div>
             </div>
             <div className="flex-none">
+                
+                <Switchtheme />
+
                 <button
                     onClick={() => handleRedirect("https://github.com/kevinrichard31", "github")}
                     className="btn btn-square btn-ghost"
