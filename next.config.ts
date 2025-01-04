@@ -12,7 +12,7 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  output: 'export',
+  // output: 'standalone',
   // distDir: 'dist',
   // trailingSlash: true
   env: {

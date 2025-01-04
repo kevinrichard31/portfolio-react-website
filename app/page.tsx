@@ -11,7 +11,6 @@ function App() {
   const projectsRef = useRef(null);
   return (
     <div className="App">
-        <Header projectsRef={projectsRef}/>
         <Heroscene/>
         <Projects ref={projectsRef}/>
         {/* <Contact /> */}
