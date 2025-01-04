@@ -1,6 +1,5 @@
 
 import './style.css'
-import Latestcommits from '../Latestscommits/latestscommits'
 
 function Heroscene() {
     return (

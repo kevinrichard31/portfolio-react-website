@@ -56,7 +56,7 @@ function Header({ projectsRef }) {
                 <Switchtheme />
 
                 <button
-                    onClick={() => handleRedirect("https://github.com/kevinrichard31", "github")}
+                    onClick={() => handleRedirect("https://github.com/kevinrichard31?tab=repositories", "github")}
                     className="btn btn-square btn-ghost"
                 >
                     <FaGithub className={`min-h-10 min-w-10 ${rotatingIcon === "github" ? "rotate" : ""}`} />

@@ -15,6 +15,9 @@ const nextConfig = {
   output: 'export',
   // distDir: 'dist',
   // trailingSlash: true
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  }
 }
 
 module.exports = nextConfig

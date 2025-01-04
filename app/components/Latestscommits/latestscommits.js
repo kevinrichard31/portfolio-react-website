@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { IoOpenOutline } from 'react-icons/io5';
 
 const LatestCommits = ({ username }) => {
   const [commits, setCommits] = useState([]);
@@ -10,7 +11,10 @@ const LatestCommits = ({ username }) => {
       try {
         // Fetch repositories
         const reposResponse = await fetch(
-          `https://api.github.com/users/${username}/repos`
+          `https://api.github.com/users/${username}/repos`,
+          {headers: {
+            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+          }}
         );
         if (!reposResponse.ok) {
           throw new Error('Failed to fetch repositories.');
@@ -20,7 +24,10 @@ const LatestCommits = ({ username }) => {
         // Fetch commits for each repository
         const commitsPromises = repos.map((repo) =>
           fetch(
-            `https://api.github.com/repos/${username}/${repo.name}/commits`
+            `https://api.github.com/repos/${username}/${repo.name}/commits`,
+            {headers: {
+              "Authorization": `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+            }}
           )
             .then((res) => (res.ok ? res.json() : []))
             .then((commits) =>
@@ -56,20 +63,38 @@ const LatestCommits = ({ username }) => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Latest Commits</h1>
-      <ul>
-        {commits.map((commit, index) => (
-          <li key={index}>
-            <strong>{commit.repo}:</strong> {commit.message} <br />
-            <em>By {commit.author} on {new Date(commit.date).toLocaleString()}</em> <br />
-            <a href={commit.url} target="_blank" rel="noopener noreferrer">
-              View Commit
+<div className="p-4 bg-base-200">
+  <h1 className="text-3xl font-bold mb-6 text-center">Derniers Commits</h1>
+  <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4 max-w-[800px] mx-auto p-4">
+    {commits.map((commit, index) => (
+      <div key={index} className="card bg-base-100 shadow-md">
+        <div className="card-body p-4 relative">
+          <h2 className="card-title text-sm font-semibold capitalize">
+          {commit.message}
+          </h2>
+          <p className="text-xs sm:text-xs md:text-sm text-gray-500">
+            Repository: {commit.repo}
+          </p>
+          <p className="text-xs sm:text-xs md:text-sm text-gray-500">
+            {new Date(commit.date).toLocaleString()}
+          </p>
+          <div className="card-actions justify-end mt-4 absolute right-2 bottom-2">
+            <a
+              href={commit.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sm btn-outline text-xs"
+            >
+              <IoOpenOutline />
+              Voir le commit
             </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
