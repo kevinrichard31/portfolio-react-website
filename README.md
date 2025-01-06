@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Ce dépôt contient le code source de mon portfolio, développé avec [Next.js](https://nextjs.org/), un framework moderne basé sur React.  
+Ce projet a pour objectif de mettre en valeur mon parcours professionnel, mes compétences et mes réalisations à travers une interface élégante et intuitive.
 
-First, run the development server:
+## Technologies et outils utilisés
 
-```bash
+- **Next.js** : Framework React pour le développement d'applications web performantes et évolutives.
+- **React** : Bibliothèque JavaScript pour la création d'interfaces utilisateur interactives.
+- **Tailwind CSS** : Framework CSS moderne pour un design rapide et responsive.
+- **DaisyUI** : Kit d'interface utilisateur basé sur Tailwind CSS.
+
+## Structure du projet
+
+La structure suivante a été adoptée pour garantir une organisation claire et une maintenance aisée :
+
+## Installation et utilisation
+
+Pour exécuter ce projet en local, suivez les étapes ci-dessous :
+
+1. Cloner ce dépôt
+
+2. Installer les dépendances :
+npm install
+
+3. Lancer le serveur de développement :
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation et utilisation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+portfolio
+├─ .gitignore
+├─ app
+│  ├─ components
+│  │  ├─ Contact
+│  │  │  ├─ contact.js
+│  │  │  └─ style.css
+│  │  ├─ Header
+│  │  │  ├─ header.js
+│  │  │  └─ style.css
+│  │  ├─ Heroscene
+│  │  │  ├─ heroscene.js
+│  │  │  └─ style.css
+│  │  ├─ Latestscommits
+│  │  │  └─ latestscommits.js
+│  │  ├─ Projects
+│  │  │  ├─ portfolio.md
+│  │  │  ├─ projects.js
+│  │  │  └─ style.css
+│  │  └─ Switchtheme
+│  │     └─ switchtheme.js
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ metadata.tsx
+│  ├─ page.tsx
+│  └─ project
+│     ├─ page.tsx
+│     └─ [id]
+│        └─ page.tsx
+├─ public
+│  ├─ images
+│  │  ├─ badge.png
+│  │  ├─ logos
+│  │  │  ├─ meta-night.svg
+│  │  │  └─ meta-platform-logo.svg
+│  │  ├─ profile-photo.jpg
+│  │  └─ qualite.png
