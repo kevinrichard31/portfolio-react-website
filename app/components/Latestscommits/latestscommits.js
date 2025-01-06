@@ -37,6 +37,7 @@ const LatestCommits = ({ username }) => {
             .then((commits) =>
               commits
                 .filter((commit) => !commit.commit.message.toLowerCase().includes("readme"))
+                .filter((commit) => !commit.commit.message.toLowerCase().includes("first"))
                 .map((commit) => ({
                   repo: repo.name, // Fix: Ensure `repo.name` is passed here
                   message: commit.commit.message,
