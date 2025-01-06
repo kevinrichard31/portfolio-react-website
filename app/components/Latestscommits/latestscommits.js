@@ -35,13 +35,15 @@ const LatestCommits = ({ username }) => {
           )
             .then((res) => (res.ok ? res.json() : []))
             .then((commits) =>
-              commits.map((commit) => ({
-                repo: repo.name, // Fix: Ensure `repo.name` is passed here
-                message: commit.commit.message,
-                author: commit.commit.author.name,
-                date: commit.commit.author.date,
-                url: commit.html_url,
-              }))
+              commits
+                .filter((commit) => !commit.commit.message.toLowerCase().includes("readme"))
+                .map((commit) => ({
+                  repo: repo.name, // Fix: Ensure `repo.name` is passed here
+                  message: commit.commit.message,
+                  author: commit.commit.author.name,
+                  date: commit.commit.author.date,
+                  url: commit.html_url,
+                }))
             )
         );
 
