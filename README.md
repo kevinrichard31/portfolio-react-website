@@ -25,12 +25,10 @@ Pour exécuter ce projet en local, suivez les étapes ci-dessous :
    cd portfolio-nextjs
 
 2. **Installer les dépendances** :  
-   Installez les modules nécessaires avec :  
    ```bash
    npm install
 
 
 3. **Lancer le serveur de développement** :  
-   Démarrez le projet en local avec :  
    ```bash
    npm run dev
