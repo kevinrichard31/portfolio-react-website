@@ -11,10 +11,11 @@ function App() {
   const projectsRef = useRef(null);
   return (
     <div className="App">
-        <Heroscene/>
-        <Projects ref={projectsRef}/>
-        {/* <Contact /> */}
-        <Latestcommits username="kevinrichard31"/>
+      <Header projectsRef={projectsRef} />
+      <Heroscene />
+      <Projects ref={projectsRef} />
+      {/* <Contact /> */}
+      <Latestcommits username="kevinrichard31" />
     </div>
   );
 }

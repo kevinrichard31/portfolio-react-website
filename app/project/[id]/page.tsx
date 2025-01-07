@@ -1,3 +1,5 @@
+
+import Header from '@/app/components/Header/header';
 import fs from 'fs';
 import path from 'path';
 
@@ -18,15 +20,15 @@ export default async function Page({ params }) {
     markdownContent = 'Le fichier Markdown n\'a pas été trouvé pour ce projet.';
   }
 
-
-
   return (
-    <div className="p-10">
-      <h1>Project: {id}</h1>
-      {/* Utilisation de ReactMarkdown pour afficher le contenu Markdown */}
-      <div className="markdown-content">
-        <ReactMarkdown>{markdownContent}</ReactMarkdown>
-      </div>
-    </div>
+    <>
+    <Header/>
+      <div className="p-10">
+        <h1>Project: {id}</h1>
+        {/* Utilisation de ReactMarkdown pour afficher le contenu Markdown */}
+        <div className="markdown-content">
+          <ReactMarkdown>{markdownContent}</ReactMarkdown>
+        </div>
+      </div></>
   );
 }

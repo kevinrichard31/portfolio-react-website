@@ -15,7 +15,7 @@ const Projects = forwardRef((props, ref) => {
 
   return (
     <div className="bg-base-300 min-h-screen" ref={ref}>
-      <h2 className='p-10 md:p-20 font-kadwa text-[50px] font-medium'>Études de cas</h2>
+      <h2 className='p-10 md:p-20 font-kadwa text-[50px] font-medium' id="all-projects">Études de cas</h2>
       <div className='projets-container p-15 gap-y-0'>
         {projects.map((project) => (
           <div key={project.id} className="card bg-base-100 w-96 shadow-xl mx-4">

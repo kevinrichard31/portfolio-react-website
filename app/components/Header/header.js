@@ -1,14 +1,13 @@
-"use client"
+"use client";
 import './style.css';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
-import Switchtheme from "../Switchtheme/switchtheme"
+import Switchtheme from "../Switchtheme/switchtheme";
 
 function Header({ projectsRef }) {
     const [rotatingIcon, setRotatingIcon] = useState(null);
     const [showHeader, setShowHeader] = useState(true);
     const lastScrollY = useRef(0);
-    const [count, setCount] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,11 +24,6 @@ function Header({ projectsRef }) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(()=>{
-        setCount(count + 1);
-        console.log(count)
-    },[])
-
     const handleRedirect = (url, icon) => {
         setRotatingIcon(icon); // Définir l'icône qui va tourner
         setTimeout(() => {
@@ -38,9 +32,20 @@ function Header({ projectsRef }) {
         }, 1000); // 1 seconde pour l'animation
     };
 
-    const goToProjects = () => {
-        if (projectsRef.current) {
-            projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    const goToProjects = (e) => {
+        e.preventDefault();
+        // Si on est sur la page d'accueil
+        console.log('hello')
+        console.log(window.location.pathname)
+        if (window.location.pathname === "/") {
+            // Scroll vers la section via ref
+            console.log(projectsRef.current)
+            if (projectsRef.current) {
+                projectsRef.current.scrollIntoView({ behavior: "smooth" });
+            }
+        } else {
+            // Si on est sur une autre page, on redirige vers l'ancrage
+            window.location.href = "/#all-projects";
         }
     };
 
@@ -48,11 +53,13 @@ function Header({ projectsRef }) {
         <div className={`navbar bg-base-200 header-wrapper ${showHeader ? "visible-navbar" : "hidden-navbar"}`}>
             <div className="flex-1">
                 <div>
-                    <button onClick={goToProjects} className="menu-top">Études de cas</button>
+                    {/* Le bouton "Études de cas" qui gère le comportement en fonction de la page */}
+                    <a href="#all-projects" onClick={goToProjects} className="menu-top">
+                        Études de cas
+                    </a>
                 </div>
             </div>
             <div className="flex-none">
-                
                 <Switchtheme />
 
                 <button
