@@ -21,7 +21,7 @@ Pour exécuter ce projet en local, suivez les étapes ci-dessous :
 1. **Cloner le dépôt** :  
    Exécutez la commande suivante pour cloner ce dépôt Git :  
    ```bash
-   git clone https://github.com/votre-utilisateur/portfolio-nextjs.git
+   git clone https://github.com/kevinrichard31/portfolio-react-website.git
    cd portfolio-nextjs
 
 2. **Installer les dépendances** :  
